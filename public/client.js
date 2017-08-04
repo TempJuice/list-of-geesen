@@ -25,6 +25,9 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 getGeesen();
+            },
+            error: function (_, _, errorThrown) {
+            alert(errorThrown);
             }
         })
 
@@ -43,10 +46,6 @@ function getGeesen() {
             console.log(response);
             geese = response;
             drawGeeseTable();
-
-        },
-        error: function (_, _, errorThrown) {
-            alert(errorThrown);
         }
     });
 
